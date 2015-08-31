@@ -22,11 +22,7 @@ import com.estimote.sdk.Region;
 import java.util.List;
 
 public class ScanBeacon extends AppCompatActivity {
-    private BeaconManager beaconManager;
-    private String scanId;
     private static final String TAG = "MainActivity";
-    //private static final String ESTIMOTE_PROXIMITY_UUID = "B9407F30-F5F8-466E-AFF9-25556B57FE6D";
-    private static final Region ALL_ESTIMOTE_BEACONS = new Region("regionId", null, null, null);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,16 +32,7 @@ public class ScanBeacon extends AppCompatActivity {
         ImageView clock = (ImageView) findViewById(R.id.clock);
         Animation clockTurn = AnimationUtils.loadAnimation(this, R.anim.clock_turn);
         clock.startAnimation(clockTurn);
-        //Beacon Connection
-      /* beaconManager = new BeaconManager(this);
-        beaconManager.setRangingListener(new BeaconManager.RangingListener() {
-            @Override
-            public void onBeaconsDiscovered(Region region, List<Beacon> beacons) {
-                Log.d(TAG, "Ranged beacons: " + beacons);
-                Intent intent = new Intent(ScanBeacon.this, ChooseShop.class);
-                startActivity(intent);
-            }
-        });*/
+
 
         NfcAdapter nfcAdapter = NfcAdapter.getDefaultAdapter(this);
         if (nfcAdapter != null && nfcAdapter.isEnabled()) {
@@ -54,6 +41,8 @@ public class ScanBeacon extends AppCompatActivity {
         else{
             Toast.makeText(this, "NFC is offline", Toast.LENGTH_LONG).show();
         }
+        // Intent intent = new Intent(ScanBeacon.this, ChooseShop.class);
+       // startActivity(intent);
     }
 
     @Override
@@ -82,30 +71,14 @@ public class ScanBeacon extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-      /*  beaconManager.connect(new BeaconManager.ServiceReadyCallback() {
-            @Override
-            public void onServiceReady() {
-                try {
-                    beaconManager.startRanging(ALL_ESTIMOTE_BEACONS);
-                } catch (RemoteException e) {
-                    Log.e(TAG, "Cannot start ranging", e);
-                }
-            }
-        });*/
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        /*try {
-            beaconManager.stopRanging(ALL_ESTIMOTE_BEACONS);
-        } catch (RemoteException e) {
-            Log.e(TAG, "Cannot stop but it does not matter now", e);
-        }*/
     }
 
     protected void onDestroy(){
         super.onDestroy();
-        //beaconManager.disconnect();
     }
 }

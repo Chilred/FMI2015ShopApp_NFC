@@ -33,7 +33,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //gitcheck
+
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
 
