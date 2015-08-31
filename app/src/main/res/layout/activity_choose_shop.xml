@@ -1,0 +1,60 @@
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:context="de.thm.mwdr.fmi2015shopapp.ChooseShop"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true"
+        android:color="#FF6400"
+        android:background="#ffffff"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="59dp"
+            android:text="@string/text_chooseShop"
+            android:id="@+id/textView"
+            android:textSize="18sp"
+            android:textColor="#ffffff"
+            android:background="#ff6400"
+            android:gravity="center" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="6dp"
+            android:id="@+id/blank" />
+
+        <ImageButton
+            android:layout_width="match_parent"
+            android:id="@+id/btnShop1"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="0.30"
+            android:layout_height="10dp"
+            android:background="@mipmap/athleteform" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="6dp"
+            android:id="@+id/blank2" />
+
+        <ImageButton
+            android:layout_width="match_parent"
+            android:id="@+id/btnShop2"
+            android:layout_weight="0.30"
+            android:layout_height="10dp"
+            android:background="@mipmap/gamerlogo" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="6dp"
+            android:id="@+id/blank3" />
+
+        <ImageButton
+            android:layout_width="match_parent"
+            android:id="@+id/btnShop3"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="0.30"
+            android:layout_height="10dp"
+            android:background="@mipmap/audioguru" />
+    </LinearLayout>

@@ -1,0 +1,53 @@
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:context="de.thm.mwdr.fmi2015shopapp.ProductView"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="50sp"
+            android:textStyle="bold"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:text="@string/productTitel"
+            android:id="@+id/textView2"
+            android:layout_weight="0.16"
+            android:textColor="#ffffff"
+            android:background="#ff6400"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/blank" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="89dp">
+
+            <ImageButton
+                android:layout_width="134dp"
+                android:id="@+id/btnShop3"
+                android:layout_gravity="center_horizontal"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:background="@mipmap/archive" />
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="5dp"
+            android:text="@string/productText1"
+            android:id="@+id/productText1"
+            android:textSize="20sp"
+            android:layout_weight="0.16"
+            android:textColor="#5A5A5A"/>
+    </LinearLayout>

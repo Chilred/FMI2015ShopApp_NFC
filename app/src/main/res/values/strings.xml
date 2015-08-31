@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">FMI2015ShopApp</string>
+
+    <string name="welcome">Herzlich Willkommen!</string>
+    <string name="fmi">FMITHMShopApp</string>
+    <string name="clock">Clock</string>
+    <string name="action_settings">Settings</string>
+    <string name="activiate">Aktivieren</string>
+    <string name="title_activity_choose_shop">ChooseShop</string>
+    <string name="text_chooseShop">Wählen Sie den gewünschten Laden aus</string>
+    <string name="title_activity_shop_view">ShopView</string>
+    <string name="text_chooseProduct">Wählen Sie das gewünschte Produkt aus</string>
+    <string name="text_price">20 Euro</string>
+    <string name="text_price2">10 Euro</string>
+    <string name="text_price3">50 Euro</string>
+    <string name="title_activity_product_view">ProductView</string>
+    <string name="productTitel">Archiv</string>
+    <string name="productText1">Archive!Archive sind toll!</string>
+    <string name="title_activity_scan_beacon">ScanBeacon</string>
+
+    <string name="hello_world">Hello world!</string>
+</resources>

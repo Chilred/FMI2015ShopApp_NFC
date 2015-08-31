@@ -1,0 +1,28 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity"
+    android:color="#ffffff"
+    android:background="#FF6400"
+
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:weightSum="1">
+
+        <ImageView
+            android:id="@+id/clock"
+            android:layout_width="301dp"
+            android:layout_height="257dp"
+            android:layout_alignParentBottom="true"
+            android:contentDescription="@string/clock"
+            android:padding="10dp"
+            android:background="#FF6400"
+
+            android:src="@drawable/clock"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_weight="0.23" />
+</LinearLayout>
