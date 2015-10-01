@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">FMI2015ShopApp</string>
+    <string name="app_name">NSA</string>
 
     <string name="welcome">Herzlich Willkommen!</string>
     <string name="fmi">FMITHMShopApp</string>
@@ -17,10 +17,10 @@
     <string name="title_activity_product_view">ProductView</string>
     <string name="productTitel">Archiv</string>
     <string name="productText1">Archive! Archive sind toll!</string>
-    <string name="title_activity_scan_beacon">ScanBeacon</string>
-    <string name="popup_help_title">Beacon Shop App Hilfe</string>
-    <string name="popup_help_content">Klicken Sie auf "Aktivieren" um Ihre Umgebung nach Beacons zu scannen. Die verfügbaren Shops werden Ihnen dann angezeigt.</string>
+    <string name="title_activity_scan_NFC">ScanNFC</string>
+    <string name="popup_help_title">NFC Shop App Hilfe</string>
+    <string name="popup_help_content">Klicken Sie auf "Aktivieren" um NFC zu aktivieren. Halten Sie ihr Smartphone an den NFC-Sticker, damit dieser gescannt wird.</string>
     <string name="popup_help_OK">OKAY</string>
-    <string name="bluetooth_activated">Bluetooth wurde aktiviert!</string>
-    <string name="bluetooth_deactivated">Bluetooth wurde deaktiviert!</string>
+    <string name="NFC_activated">NFC wurde aktiviert!</string>
+    <string name="NFC_deactivated">NFC wurde deaktiviert!</string>
 </resources>

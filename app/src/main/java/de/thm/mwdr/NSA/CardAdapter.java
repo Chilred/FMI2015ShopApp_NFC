@@ -1,4 +1,4 @@
-package de.thm.mwdr.fmi2015shopapp;
+package de.thm.mwdr.NSA;
 
 import android.graphics.Bitmap;
 import android.support.v7.widget.RecyclerView;

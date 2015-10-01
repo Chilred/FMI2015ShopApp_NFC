@@ -22,7 +22,7 @@
             android:src="@mipmap/bse"/>
 
         <Button
-            android:id="@+id/btnScanBeacon"
+            android:id="@+id/btnScanNFC"
             android:text="@string/activiate"
             android:textColor="#ff6400"
             android:background="#ffffff"

@@ -1,4 +1,4 @@
-package de.thm.mwdr.fmi2015shopapp;
+package de.thm.mwdr.NSA;
 
 import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
@@ -22,10 +22,10 @@ public class MainActivity extends Activity implements View.OnClickListener{
     public void onClick(View v){
         BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
         switch (v.getId()){
-            case R.id.btnScanBeacon:
+            case R.id.btnScanNFC:
                 if (!mBluetoothAdapter.isEnabled()) {
                     mBluetoothAdapter.enable();
-                    Toast.makeText(getApplicationContext(), R.string.bluetooth_activated, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), R.string.NFC_activated, Toast.LENGTH_SHORT).show();
                 }
                 Intent intent = new Intent(this,ScanBeacon.class);
                 startActivity(intent);
@@ -47,7 +47,7 @@ public class MainActivity extends Activity implements View.OnClickListener{
         BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
         if (mBluetoothAdapter.isEnabled()) {
             mBluetoothAdapter.disable();
-            Toast.makeText(getApplicationContext(), R.string.bluetooth_deactivated, Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), R.string.NFC_deactivated, Toast.LENGTH_SHORT).show();
         }
     }
 }
