@@ -6,8 +6,9 @@
     <string name="clock">Clock</string>
     <string name="action_settings">Settings</string>
     <string name="activiate">Aktivieren</string>
+    <string name="helpButton">Hilfe</string>
     <string name="title_activity_choose_shop">ChooseShop</string>
-    <string name="text_chooseShop">Wählen Sie den gewünschten Laden aus</string>
+    <string name="text_chooseShop">Wählen Sie den gewünschten Shop aus</string>
     <string name="title_activity_shop_view">ShopView</string>
     <string name="text_chooseProduct">Wählen Sie das gewünschte Produkt aus</string>
     <string name="text_price">20 Euro</string>
@@ -15,8 +16,11 @@
     <string name="text_price3">50 Euro</string>
     <string name="title_activity_product_view">ProductView</string>
     <string name="productTitel">Archiv</string>
-    <string name="productText1">Archive!Archive sind toll!</string>
+    <string name="productText1">Archive! Archive sind toll!</string>
     <string name="title_activity_scan_beacon">ScanBeacon</string>
-
-    <string name="hello_world">Hello world!</string>
+    <string name="popup_help_title">Beacon Shop App Hilfe</string>
+    <string name="popup_help_content">Klicken Sie auf "Aktivieren" um Ihre Umgebung nach Beacons zu scannen. Die verfügbaren Shops werden Ihnen dann angezeigt.</string>
+    <string name="popup_help_OK">OKAY</string>
+    <string name="bluetooth_activated">Bluetooth wurde aktiviert!</string>
+    <string name="bluetooth_deactivated">Bluetooth wurde deaktiviert!</string>
 </resources>

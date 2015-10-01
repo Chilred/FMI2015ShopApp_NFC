@@ -17,7 +17,7 @@
             android:gravity="center_vertical"
             android:paddingLeft="10dp"
             android:text="@string/productTitel"
-            android:id="@+id/textView2"
+            android:id="@+id/productTitel"
             android:layout_weight="0.16"
             android:textColor="#ffffff"
             android:background="#ff6400"
@@ -28,26 +28,38 @@
             android:layout_height="wrap_content"
             android:id="@+id/blank" />
 
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="89dp">
+        <ImageView
+            android:layout_width="309dp"
+            android:id="@+id/productimage"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="115dp"
+            android:gravity="center"
+            android:background="@mipmap/archive" />
 
-            <ImageButton
-                android:layout_width="134dp"
-                android:id="@+id/btnShop3"
-                android:layout_gravity="center_horizontal"
-                android:layout_height="50dp"
-                android:gravity="center"
-                android:background="@mipmap/archive" />
-        </FrameLayout>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.16" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingLeft="5dp"
             android:text="@string/productText1"
-            android:id="@+id/productText1"
+            android:id="@+id/productText"
             android:textSize="20sp"
             android:layout_weight="0.16"
             android:textColor="#5A5A5A"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingRight="5dp"
+            android:gravity="right"
+            android:id="@+id/productPrice"
+            android:textSize="32sp"
+            android:layout_weight="0.16"
+            android:textColor="#5A5A5A"/>
+
+
     </LinearLayout>

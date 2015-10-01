@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/FMI2015ShopApp_NFC.iml" filepath="$PROJECT_DIR$/FMI2015ShopApp_NFC.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FMI2015ShopApp.iml" filepath="$PROJECT_DIR$/FMI2015ShopApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

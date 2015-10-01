@@ -1,37 +1,47 @@
 package de.thm.mwdr.fmi2015shopapp;
 
-import android.support.v7.app.AppCompatActivity;
+import android.app.Activity;
+import android.content.SharedPreferences;
+import android.graphics.Bitmap;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.widget.ImageView;
+import android.widget.TextView;
 
-public class ProductView extends AppCompatActivity {
+import org.json.JSONException;
+import org.json.JSONObject;
+
+public class ProductView extends Activity {
+    private String name, price, productText = null;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product_view);
-    }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_product_view, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        SharedPreferences settings = getSharedPreferences(Config.SHARED_PREFS_FILE, 0);
+        String productString = settings.getString(Config.SHARED_PREFS_PRODUCT_STRING, "");
+        try {
+            JSONObject product = new JSONObject(productString);
+            name = product.getString("name");
+            price = product.getString("price");
+            productText = product.getString("productText");
+            new DownloadImageTask(this).execute(product.getString("image"));
+        }catch (JSONException e) {
+            e.printStackTrace();
         }
+        TextView title = (TextView) findViewById(R.id.productTitel);
+        TextView productTextfield = (TextView) findViewById(R.id.productText);
+        TextView priceTextfield = (TextView) findViewById(R.id.productPrice);
 
-        return super.onOptionsItemSelected(item);
+        title.setText(name);
+        productTextfield.setText(productText);
+        priceTextfield.setText(price);
+
+    }
+
+    public void setImage(Bitmap image) {
+        ImageView imageView = (ImageView) findViewById(R.id.productimage);
+        imageView.setImageBitmap(image);
     }
 }

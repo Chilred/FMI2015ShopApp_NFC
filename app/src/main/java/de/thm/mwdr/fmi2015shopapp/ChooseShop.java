@@ -1,66 +1,50 @@
 package de.thm.mwdr.fmi2015shopapp;
 
+import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
-import android.widget.ImageButton;
-import android.widget.TextView;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 
-public class ChooseShop extends AppCompatActivity implements View.OnClickListener{
-    private TextView rootview;
-    private ImageButton btn;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+public class ChooseShop extends Activity implements CardClickedReceiver{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose_shop);
-    }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_choose_shop, menu);
-
-        rootview = (TextView)findViewById(R.id.textView);
-        btn = (ImageButton) rootview.findViewById(R.id.btnShop1);
-        findViewById(R.id.btnShop1).setOnClickListener(this);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        // fetch JSON-String from shared preferences
+        SharedPreferences settings = getSharedPreferences(Config.SHARED_PREFS_FILE, 0);
+        JSONObject jsonObject = null;
+        try {
+            jsonObject = new JSONObject(settings.getString(Config.SHARED_PREFS_SHOP_JSON, ""));
+        } catch (JSONException e) {
+            e.printStackTrace();
         }
 
-        return super.onOptionsItemSelected(item);
+
+        RecyclerView mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        mRecyclerView.setHasFixedSize(true);
+
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(this);
+        mRecyclerView.setLayoutManager(mLayoutManager);
+        RecyclerView.Adapter mAdapter = new CardAdapter(jsonObject, this);
+        mRecyclerView.setAdapter(mAdapter);
     }
 
-    public void onClick(View v){
-        switch (v.getId()){
-            case R.id.btnShop1:
-                Intent intent = new Intent(this,ShopView.class);
-                startActivity(intent);
-                break;
-            case R.id.btnShop2:
-                Intent intent1 = new Intent(this,ShopView.class);
-                startActivity(intent1);
-                break;
-            case R.id.btnShop3:
-                Intent intent2 = new Intent(this,ShopView.class);
-                startActivity(intent2);
-                break;
-        }
+    public void itemClicked(String uuid){
+        Intent intent = new Intent(ChooseShop.this,ShopView.class);
+        SharedPreferences sharedpreferences = getSharedPreferences(Config.SHARED_PREFS_FILE, 0);
+        SharedPreferences.Editor editor = sharedpreferences.edit();
+        editor.putString(Config.SHARED_PREFS_UUID, uuid);
+        editor.apply();
+
+        startActivity(intent);
 
     }
+
 }

@@ -1,5 +1,5 @@
 <set xmlns:android="http://schemas.android.com/apk/res/android"
-    android:duration="5000"
+    android:duration="20000"
     android:fillAfter="true"
     android:interpolator="@android:anim/linear_interpolator"
     android:shareInterpolator="false" >
@@ -8,6 +8,6 @@
         android:fromDegrees="0"
         android:pivotX="50%"
         android:pivotY="50%"
-        android:toDegrees="720" />
+        android:toDegrees="7200" />
  
 </set>
