@@ -1,9 +1,10 @@
 package de.thm.mwdr.NSA;
 
 import android.app.Activity;
-import android.bluetooth.BluetoothAdapter;
 import android.content.Intent;
+import android.nfc.NfcAdapter;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -12,23 +13,31 @@ import com.afollestad.materialdialogs.MaterialDialog;
 public class MainActivity extends Activity implements View.OnClickListener{
 
     private static final String TAG = "MainActivity";
+    private NfcAdapter mNfcAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        mNfcAdapter = NfcAdapter.getDefaultAdapter(this);
+        if (mNfcAdapter == null) {
+            Toast.makeText(this, R.string.NFC_not_supported, Toast.LENGTH_LONG).show();
+            Log.d(TAG,"NFC not supported on device.");
+            finish();
+        }
     }
 
     public void onClick(View v){
-        BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
         switch (v.getId()){
             case R.id.btnScanNFC:
-                if (!mBluetoothAdapter.isEnabled()) {
-                    mBluetoothAdapter.enable();
+                if (!mNfcAdapter.isEnabled()) {
+                    // NFC can't be enabled programmatically (at least not easily: http://stackoverflow.com/questions/6509316/how-can-i-enable-nfc-reader-via-api)
                     Toast.makeText(getApplicationContext(), R.string.NFC_activated, Toast.LENGTH_SHORT).show();
+                } else {
+                    Intent intent = new Intent(this,ScanNFC.class);
+                    startActivity(intent);
                 }
-                Intent intent = new Intent(this,ScanBeacon.class);
-                startActivity(intent);
                 break;
 
             case R.id.help:
@@ -38,16 +47,6 @@ public class MainActivity extends Activity implements View.OnClickListener{
                         .positiveText(R.string.popup_help_OK)
                         .show();
                 break;
-        }
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
-        if (mBluetoothAdapter.isEnabled()) {
-            mBluetoothAdapter.disable();
-            Toast.makeText(getApplicationContext(), R.string.NFC_deactivated, Toast.LENGTH_SHORT).show();
         }
     }
 }

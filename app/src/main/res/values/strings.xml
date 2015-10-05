@@ -21,6 +21,7 @@
     <string name="popup_help_title">NFC Shop App Hilfe</string>
     <string name="popup_help_content">Klicken Sie auf "Aktivieren" um NFC zu aktivieren. Halten Sie ihr Smartphone an den NFC-Sticker, damit dieser gescannt wird.</string>
     <string name="popup_help_OK">OKAY</string>
-    <string name="NFC_activated">NFC wurde aktiviert!</string>
+    <string name="NFC_activated">Sie müssen NFC aktivieren um fortzufahren!</string>
     <string name="NFC_deactivated">NFC wurde deaktiviert!</string>
+    <string name="NFC_not_supported">Dieses Gerät unterstützt NFC nicht!</string>
 </resources>
