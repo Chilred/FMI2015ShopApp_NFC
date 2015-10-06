@@ -41,10 +41,10 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
                 card.setName(js.get("name").toString());
                 if(js.has("location")) {
                     card.setDescription(js.get("location").toString());
-                } else{
+                } else {
                     card.setDescription(js.get("price").toString());
                 }
-                card.setThumbnail(R.drawable.audioguru);
+                card.setThumbnail(R.drawable.default_image);
                 card.setImageName(js.get("image").toString());
                 card.setUUID(currentUUID);
                 cardList.add(card);
