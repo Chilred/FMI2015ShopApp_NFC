@@ -36,7 +36,7 @@ public class ProductView extends Activity {
 
         title.setText(name);
         productTextfield.setText(productText);
-        priceTextfield.setText(price);
+        priceTextfield.setText(price + " " + "Euro");
 
     }
 

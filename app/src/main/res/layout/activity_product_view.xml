@@ -29,12 +29,13 @@
             android:id="@+id/blank" />
 
         <ImageView
-            android:layout_width="309dp"
+            android:layout_width="match_parent"
             android:id="@+id/productimage"
             android:layout_gravity="center_horizontal"
             android:layout_height="115dp"
             android:gravity="center"
-            android:background="@mipmap/archive" />
+            android:background="@mipmap/archive"
+            android:layout_weight="0.45" />
 
         <Space
             android:layout_width="match_parent"
