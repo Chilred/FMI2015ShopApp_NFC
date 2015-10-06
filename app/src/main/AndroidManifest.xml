@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="de.thm.mwdr.NSA" >
+    package="de.thm.mwdr.fmi2015shopapp" >
 
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
@@ -16,7 +16,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="de.thm.mwdr.NSA.MainActivity"
+            android:name="de.thm.mwdr.fmi2015shopapp.MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,19 +30,19 @@
             </intent-filter>-->
         </activity>
         <activity
-            android:name="de.thm.mwdr.NSA.ChooseShop"
+            android:name="de.thm.mwdr.fmi2015shopapp.ChooseShop"
             android:label="@string/title_activity_choose_shop" >
         </activity>
         <activity
-            android:name="de.thm.mwdr.NSA.ShopView"
+            android:name="de.thm.mwdr.fmi2015shopapp.ShopView"
             android:label="@string/title_activity_shop_view" >
         </activity>
         <activity
-            android:name="de.thm.mwdr.NSA.ProductView"
+            android:name="de.thm.mwdr.fmi2015shopapp.ProductView"
             android:label="@string/title_activity_product_view" >
         </activity>
         <activity
-            android:name=".ScanNFC"
+            android:name="de.thm.mwdr.fmi2015shopapp.ScanNFC"
             android:label="@string/title_activity_scan_NFC" >
         </activity>
     </application>

@@ -1,4 +1,4 @@
-package de.thm.mwdr.NSA;
+package de.thm.mwdr.fmi2015shopapp;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

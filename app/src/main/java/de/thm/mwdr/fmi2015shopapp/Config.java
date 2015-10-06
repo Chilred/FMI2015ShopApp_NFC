@@ -1,4 +1,4 @@
-package de.thm.mwdr.NSA;
+package de.thm.mwdr.fmi2015shopapp;
 
 /**
  * Created by David on 20.09.2015.

@@ -5,7 +5,7 @@ android {
     buildToolsVersion '23.0.0'
 
     defaultConfig {
-        applicationId "de.thm.mwdr.fmi2015shopapp"
+        applicationId "de.thm.mwdr.NSA"
         minSdkVersion 18
         targetSdkVersion 23
         versionCode 1
